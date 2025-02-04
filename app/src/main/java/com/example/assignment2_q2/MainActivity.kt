@@ -5,9 +5,11 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Scaffold
@@ -15,7 +17,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -40,7 +41,9 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Gallery(modifier: Modifier = Modifier) {
     Column (modifier = Modifier.padding(50.dp)){
-        Row (modifier = Modifier.padding(15.dp)){
+        Spacer(modifier = Modifier.height(30.dp))
+
+        Row {
             Column (modifier = Modifier.padding(5.dp)) {
                 Image(painter = painterResource(id = R.drawable.cat1), contentDescription = "Cat1", modifier = Modifier.size(150.dp))
                 Text(text = "Cat 1", fontSize = 12.sp) }
@@ -48,9 +51,11 @@ fun Gallery(modifier: Modifier = Modifier) {
                 Image(painter = painterResource(id = R.drawable.cat2), contentDescription = "Cat2", modifier = Modifier.size(150.dp))
                 Text(text = "Cat 2", fontSize = 12.sp)
             }
-
         }
-        Row (modifier = Modifier.padding(15.dp)) {
+
+        Spacer(modifier = Modifier.height(15.dp))
+
+        Row {
             Column (modifier = Modifier.padding(5.dp)) {
                 Image(painter = painterResource(id = R.drawable.cat3), contentDescription = "Cat2", modifier = Modifier.size(150.dp))
                 Text(text = "Cat 3", fontSize = 12.sp)
@@ -60,7 +65,10 @@ fun Gallery(modifier: Modifier = Modifier) {
                 Text(text = "Cat 4", fontSize = 12.sp)
             }
         }
-        Row (modifier = Modifier.padding(15.dp)){
+
+        Spacer(modifier = Modifier.height(15.dp))
+
+        Row {
             Column (modifier = Modifier.padding(5.dp)) {
                 Image(painter = painterResource(id = R.drawable.cat5), contentDescription = "Cat5", modifier = Modifier.size(150.dp))
                 Text(text = "Cat 5", fontSize = 12.sp)
